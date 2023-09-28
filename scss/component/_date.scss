@@ -1,0 +1,12 @@
+@use "../global" as g;
+
+/*!
+component > date
+------------------------------
+*/
+
+.c-date {
+  color: var(--color-font-glay);
+  font-size: 14px;
+  font-weight: bold;
+}

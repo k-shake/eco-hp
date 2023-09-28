@@ -1,0 +1,66 @@
+@use "../global" as g;
+
+/*!
+utility > utility
+------------------------------
+*/
+// sp.pc表示
+.u-sp {
+  @include g.mq() {
+    display: none !important;
+  }
+}
+
+.u-pc {
+  display: none !important;
+
+  @include g.mq() {
+    display: block !important;
+  }
+}
+
+.u-mt {
+  margin-top: 64px !important;
+
+  @include g.mq() {
+    margin-top: 80px !important;
+  }
+}
+
+.u-xmt {
+  margin-top: 24px !important;
+  
+  @include g.mq() {
+    margin-top: 32px !important;
+  }
+}
+
+.u-smt {
+  margin-top: 40px !important;
+
+  @include g.mq() {
+    margin-top: 60px !important;
+  }
+}
+
+.u-ptb {
+  padding: 64px 0 !important;
+
+  @include g.mq() {
+    padding: 80px 0 !important;
+  }
+}
+
+// 隠しテキスト
+.u-visually-hidden {
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  padding: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  margin: -1px !important;
+}

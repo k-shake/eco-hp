@@ -1,0 +1,176 @@
+@use "../../global" as g;
+
+/*!
+layout > footer > footer
+------------------------------
+*/
+.footer {
+  position: relative;
+  background-color: var(--color-bg-blue);
+  color: var(--color-bg-white);
+  line-height: 1.5;
+  margin-top: 64px;
+  z-index: var(--z-index-menu);
+
+  @include g.mq() {
+    margin-top: 80px;
+  }
+}
+
+.footer-font {
+  font-size: 16px;
+  font-weight: bold;
+
+  @include g.mq() {
+    font-size: 18px;
+  }
+}
+
+.footer-flex {
+  @include g.mq(lg) {
+    display: flex;
+    gap: 55px;
+  }
+
+  @include g.mq(xl) {
+    gap: 109px;
+  }
+}
+
+.footer-left {
+  @include g.mq(lg) {
+    width: 50%;
+    flex-shrink: 1;
+  }
+}
+
+.footer-logo {
+  max-width: 250px;
+  width: 50%;
+  padding-top: 32px;
+  padding-bottom: 38px;
+
+  @include g.mq() {
+    padding-top: 60px;
+  }
+}
+
+.footer-adrress {
+  span {
+    display: block;
+    
+    @include g.mq() {
+      margin-top: 2px;
+    }
+  }
+}
+
+.footer-opening {
+  margin-top: 18px;
+
+  &-text {
+    margin-top: -24px;
+    margin-left: 92px;
+    
+    @include g.mq() {
+      margin-top: -27px;
+      margin-left: 102px;
+    }
+    
+    span {
+      display: block;
+    }
+  }
+}
+
+.footer-closing {
+  margin-top: 18px;
+  width: fit-content;
+  
+  &-space {
+    padding-left: 8.4px;
+    
+    @include g.mq() {
+      padding-left: 9.4px;
+    }
+  }
+  
+  &-text {
+    margin-top: -24px;
+    margin-left: 92px;
+    
+    @include g.mq() {
+      margin-top: -27px;
+      margin-left: 102px;
+      
+    }
+
+    span {
+      display: block;
+    }
+  }
+}
+
+.footer-tel {
+  margin-top: 18px;
+
+  @include g.mq() {
+    margin-top: 24px;
+  }
+
+  span {
+    font-size: 20px;
+    margin-left: 8px;
+
+    @include g.mq() {
+      font-size: 30px;
+    }
+  }
+}
+
+.footer-company {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 32px;
+
+  @include g.mq() {
+    font-size: 14px;
+    margin-top: 64px;
+  }
+}
+
+.footer-right {
+  display: none;
+
+  @include g.mq(lg) {
+    display: block;
+    align-items: right;
+    margin: 0 0 0 auto;
+  }
+}
+
+.footer-nav {
+  display: flex;
+  gap: 36px;
+}
+
+.footer-item {
+  border-bottom: 1px solid var(--color-bg-white);
+  width: fit-content;
+  
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
+}
+
+.footer-copyright {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 42px;
+  padding-bottom: 9px;
+}

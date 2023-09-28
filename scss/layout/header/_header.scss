@@ -1,0 +1,318 @@
+@use "../../global" as g;
+
+/*!
+layout > header > header
+------------------------------
+*/
+.header {
+  position: fixed;
+  width: 100%;
+  height: 69.5px;
+  background-color: var(--color-bg-white);
+  border-bottom: 2px solid var(--color-border-blue);
+  z-index: var(--z-index-modal);
+  
+  @include g.mq() {
+    height: 150px;
+    border-bottom: 6px solid var(--color-border-blue);
+  }
+}
+
+// 動画クリックイベント時
+.header.is-header {
+  z-index: var(--z-index-header);
+}
+// 
+
+.header-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo {
+  max-width: 162px;
+  width: 100%;
+  margin-top: 18px;
+
+  @include g.mq() {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .header-logo {
+    padding-right: 10%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .header-logo {
+    padding-right: 30%;
+  }
+}
+
+.header-text {
+  display: none;
+
+  @include g.mq(lg) {
+    position: absolute;
+    display: block;
+    color: var(--color-font-brown);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 20px 0 0 282px;
+
+    span {
+      display: block;
+    }
+  }
+}
+
+.top-nav {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 173px;
+  width: 100%;
+
+  @include g.mq() {
+    max-width: 205px;
+    position: static;
+    justify-content: flex-end;
+  }
+}
+
+.header-contact {
+  background-color: var(--color-bg-green);
+  color: var(--color-font-white);
+  max-width: 105px;
+  width: 100%;
+  height: 68px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+  
+  @include g.mq() {
+    max-width: 125px;
+    height: 80px;
+  }
+  
+  &::before {
+    content: "";
+    width: 30px;
+    height: 23px;
+    margin: 0 auto;
+    display: block;
+    background-image: url(../img/top-mail.svg);
+    background-position: center;
+    background-size: cover;
+    
+    @include g.mq() {
+      width: 37px;
+      height: 28px;
+    }
+  }
+}
+
+.header-contact-text {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 5px;
+  
+  @include g.mq() {
+    font-size: 14px;
+    margin-top: 7px;
+  }
+}
+
+// ハンバーガーメニュー
+.hum-button {
+  background-color: var(--color-bg-blue);
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 68px;
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-index-modal);
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  @include g.mq() {
+    width: 80px;
+    height: 80px;
+  }
+
+  &::after {
+    content: "MENU";
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 14px;
+    color: var(--color-font-white);
+    font-size: 12px;
+    font-weight: bold;
+
+    @include g.mq() {
+      font-size: 14px;
+      bottom: 16px;
+    }
+  }
+}
+
+.hum-button-line {
+  width: 48.5%;
+  height: 3px;
+  background-color: var(--color-font-white);
+  position: relative;
+  transition: 0.2s;
+  top: 0;
+  margin-bottom: 15px;
+
+  @include g.mq() {
+    height: 4px;
+    margin-bottom: 20px;
+  }
+}
+
+.hum-button-line::before,
+.hum-button-line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-font-white);
+  transition: 0.2s;
+  transform: translateX(-50%);
+  right: 0;
+}
+
+.hum-button-line::before {
+  transform: translateY(-10px);
+
+  @include g.mq() {
+    transform: translateY(-12px);
+  }
+}
+
+.hum-button-line::after {
+  transform: translateY(10px);
+  @include g.mq() {
+    transform: translateY(12px);
+  }
+}
+
+.hum-button-line.is-open {
+  background-color: transparent;
+}
+
+.hum-button-line.is-open::before,
+.hum-button-line.is-open::after {
+  content: "";
+  background-color: var(--color-font-white);
+  transition: 0.2s;
+}
+
+.hum-button-line.is-open::before {
+  transform: rotate(135deg);
+}
+
+.hum-button-line.is-open::after {
+  transform: rotate(-135deg);
+}
+
+.menu {
+  margin-left: auto;
+}
+
+.main {
+  padding: 0 16px;
+}
+
+// オープン時
+.list {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding: 64px 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: var(--z-index-header);
+
+  @include g.mq() {
+    padding: 120px 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.list.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.list-left {
+  width: 100%;
+  max-width: 360px;
+  
+  @include g.mq(lg) {
+    max-width: 400px;
+    
+  }
+}
+
+.list-right {
+  width: 100%;
+  max-width: 360px;
+  
+  @include g.mq(lg) {
+    max-width: 400px;
+    
+  }
+}
+
+.item {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 32px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.3s, transform 0.3s;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+
+  @include g.mq(sm) {
+    font-size: 24px;
+    margin-top: 36px;
+  }
+
+  
+  @include g.mq() {
+    font-size: 28px;
+    margin-top: 52px;
+  }
+}
+
+.list.is-open .item {
+  opacity: 1;
+  transform: none;
+}

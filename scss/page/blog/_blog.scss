@@ -1,0 +1,11 @@
+@use "../../global" as g;
+
+/*!
+page > blog > blog
+------------------------------
+*/
+
+.blog {
+  position: relative;
+  z-index: var(--z-index-menu);
+}

@@ -1,0 +1,14 @@
+@use "../../global" as g;
+
+/*!
+page > top > instagram
+------------------------------
+*/
+
+.instagram {
+  margin-top: 64px;
+
+  @include g.mq() {
+    margin-top: 120px;
+  }
+}

@@ -1,0 +1,46 @@
+@use "../global" as g;
+
+/*!
+component > pagetop
+------------------------------
+*/
+
+.pagetop {
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  background: rgb(255, 255, 255, 0.7);
+  border: solid 2px var(--color-border-blue);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-index-header);
+
+  @include g.mq() {
+    height: 50px;
+    width: 50px;
+    bottom: 30px;
+  }
+
+  &:hover {
+    opacity: 0.7;
+    background-color: var(--color-border-blue);
+
+    .pagetop__arrow {
+      border-top: 3px solid var(--color-border-white);
+      border-right: 3px solid var(--color-border-white);
+    }
+  }
+}
+
+.pagetop__arrow {
+  position: relative;
+  height: 10px;
+  width: 10px;
+  border-top: 3px solid var(--color-border-blue);
+  border-right: 3px solid var(--color-border-blue);
+  transform: translateY(20%) rotate(-45deg);
+}

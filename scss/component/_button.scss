@@ -1,0 +1,81 @@
+@use "../global" as g;
+
+/*!
+component > button
+------------------------------
+*/
+.c-button {
+  color: var(--color-font-white);
+  background-color: var(--color-bg-blue);
+  padding: 8px 16px;
+  text-transform: uppercase;
+  position: relative;
+  width: 100%;
+  max-width: 190px;
+  height: 53px;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: bold;
+  display: grid;
+  // place-items: center;
+  align-items: center;
+  padding-left: 30px;
+  
+  &:hover {
+    opacity: 0.7;
+
+      &::after {
+          right: 15px;
+          transition: 0.3s;
+      }
+  }
+  
+  @include g.mq() {
+    max-width: 225px;
+    height: 56px;
+    border-radius: 10px;
+      font-size: 24px;
+
+  }
+
+  &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-left: 4px solid var(--color-border-white);
+      border-bottom: 4px solid var(--color-border-white);
+      top: 50%;
+      right: 30px;
+      transform: translateY(-40%) rotate(-135deg);
+  }
+
+  &--center {
+      margin: 0 auto;
+  }
+}
+
+.c-button-sub {
+  color: var(--color-font-white);
+  background-color: var(--color-bg-dark-blue);
+  padding: 8px 16px;
+  text-transform: uppercase;
+  position: relative;
+  width: 100%;
+  height: 53px;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: bold;
+  display: grid;
+  place-items: center;
+
+  @include g.mq() {
+    height: 64px;
+    font-size: 20px;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,206 @@
+@use "../../global" as g;
+
+/*!
+page > school > school-top
+------------------------------
+*/
+
+.school-main {
+  position: relative;
+  z-index: var(--z-index-menu);
+}
+
+.school-main-inner {
+  @include g.mq(sm) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 20px;
+  }
+  
+  @include g.mq() {
+    gap: 0 50px;
+  }
+
+  @include g.mq(lg) {
+    gap: 0 80px;
+  }
+}
+
+.school-main-container {
+  margin-top: 24px;
+
+  @include g.mq() {
+    margin-top: 40px;
+  }
+
+  &:hover {
+    .school-main-title {
+      opacity: 0.7;
+    }
+
+    .school-main-img img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.school-main-img {
+  overflow: hidden;
+  width: 100%;
+
+  img {
+    height: auto;
+    transition: transform 0.6s ease;
+  }
+}
+
+.school-main-block {
+  border-bottom: 1px solid var(--color-border-light-gray);
+  border-left: 1px solid var(--color-border-light-gray);
+  border-right: 1px solid var(--color-border-light-gray);
+}
+
+.school-main-title {
+  padding: 14px 12px;
+
+  @include g.mq() {
+    padding: 24px 18px;
+  }
+
+  span {
+    font-size: 16px;
+
+    @include g.mq(sm) {
+      font-size: 18px;
+    }
+
+    @include g.mq(lg) {
+      font-size: 22px;
+    }
+  }
+}
+
+.school-studio {
+  margin-top: 64px;
+}
+
+.school-environment {
+  margin-top: 64px;
+}
+
+// way
+.school-way-text {
+  padding-top: 18px;
+
+  @include g.mq() {
+    padding-top: 24px;
+  }
+
+  p {
+    &:not(:first-child) {
+      padding-top: 10px;
+
+      @include g.mq() {
+        padding-top: 14px;
+      }
+    }
+  }
+}
+
+// flow
+.school-flow-inner {
+  margin-top: 22%;
+
+  @include g.mq() {
+    margin-top: 12%;
+  }
+}
+
+.school-flow-container {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 18%;
+  padding-bottom: 4%;
+
+  @include g.mq() {
+    width: 50%;
+    margin-top: 10%;
+  }
+
+  &-light-blue {
+    background-color: var(--color-bg-light-blue);
+  }
+
+  &-green {
+    background-color: var(--color-bg-green);
+  }
+
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    background-image: url(../img/school-flow-arrow@2x.png);
+    background-position: center;
+    background-size: cover;
+    width: 34px;
+    height: 16px;
+    bottom: -3%;
+    right: 50%;
+    transform: translateX(50%);
+
+    @include g.mq() {
+      width: 47px;
+      height: 22px;
+      bottom: -5%;
+    }
+  }
+}
+
+.school-flow-container-img {
+  position: absolute;
+  width: 33%;
+  top: 0;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.school-flow-container-title {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 21%;
+  padding-bottom: 4%;
+}
+
+.school-flow-container-text {
+  background-color: var(--color-bg-white);
+  width: 88%;
+  margin: 0 auto;
+
+  p {
+    text-align: center;
+    font-weight: 500;
+    padding: 28px 0;
+    padding: 5% 0;
+
+    span {
+      display: block;
+      line-height: 1;
+
+      &:not(:first-child) {
+        padding-top: 8px;
+      }
+    }
+  }
+}
+
+.school-flow-arrow-img {
+  position: absolute;
+  max-width: 55px;
+  width: 9%;
+  bottom: -6.25%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}

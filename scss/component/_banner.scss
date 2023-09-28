@@ -1,0 +1,37 @@
+@use "../global" as g;
+
+/*!
+component > banner
+------------------------------
+*/
+
+.c-banner {
+  margin-top: 64px;
+
+  @include g.mq() {
+    margin-top: 80px;
+  }
+}
+
+.c-banner-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 12px;
+  
+  @include g.mq() {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 27px;
+    
+  }
+}
+
+.c-banner-img {
+  
+  img {
+      border: 2px solid var(--color-border-blue);
+      
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+}

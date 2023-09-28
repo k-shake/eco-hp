@@ -1,0 +1,257 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-facility
+------------------------------
+*/
+
+.top-facility {
+  background-color: var(--color-bg-light-blue);
+}
+
+.top-facility-summary {
+  position: relative;
+  margin-bottom: 68px;
+
+  @include g.mq() {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 1080px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.top-facility-card {
+  position: absolute;
+  background-color: var(--color-bg-white);
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include g.mq() {
+    position: inherit;
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
+.top-facility-card-inner {
+  margin: auto;
+  text-align: left;
+  width: 88%;
+  padding: 24px 0;
+  padding: 7.3% 0;
+
+  @include g.mq() {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15%;
+  }
+}
+
+.top-facility-card-title {
+  margin-bottom: 14px;
+
+  @include g.mq() {
+    margin-bottom: 24px;
+  }
+
+  @include g.mq(lg) {
+    margin-bottom: 42px;
+  }
+}
+
+.top-facility-summary-text {
+  margin-bottom: 24px;
+
+  @include g.mq(lg) {
+    margin-bottom: 38px;
+  }
+}
+
+.top-facility-flex {
+  @include g.mq() {
+    display: flex;
+    max-width: 1080px;
+    width: 90%;
+    margin: 0 auto;
+    gap: 32px;
+    padding-bottom: 60px;
+  }
+}
+
+.top-facility-sales {
+  padding-top: 40px;
+  width: 90%;
+  margin: 0 auto;
+
+  @include g.mq() {
+    padding-top: 48px;
+    width: 100%;
+    flex-shrink: 0.75;
+  }
+}
+
+.top-facility-sales-inner {
+  background-color: var(--color-bg-white);
+}
+
+.top-facility-sales-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 14px 0 18px;
+
+  @include g.mq() {
+    padding: 18px 0 26px;
+  }
+}
+
+.top-facility-sales-title {
+  margin-bottom: 14px;
+}
+
+.top-facility-sales-text {
+  margin-bottom: 18px;
+
+  @include g.mq() {
+    text-align: center;
+  }
+}
+
+.top-facility-btn-box {
+  width: 100%;
+  padding: 40px 0 64px;
+
+  @include g.mq() {
+    padding: 48px 0;
+    min-height: 200px;
+  }
+}
+
+.top-facility-btn {
+  position: relative;
+  background-image: linear-gradient(90deg, #015eea, #00c0fa);
+  display: block;
+  margin: 0 auto;
+  width: 75.5%;
+  height: 60px;
+
+  @include g.mq() {
+    width: 100%;
+    height: 192px;
+    height: 50%;
+  }
+
+  p {
+    color: var(--color-font-white);
+    font-size: 22px;
+    font-weight: bold;
+
+    @include g.mq() {
+      position: absolute;
+      font-size: 26px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @include g.mq(lg) {
+      font-size: 34px;
+    }
+  }
+
+  &-calendar {
+    @include g.mq() {
+      right: 5%;
+    }
+  }
+  &-access {
+    @include g.mq() {
+      right: 20%;
+    }
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+
+    @include g.mq() {
+      width: 50px;
+      height: 50px;
+    }
+
+    @include g.mq(lg) {
+      width: 90px;
+      height: 90px;
+    }
+  }
+}
+
+.top-facility-calendar {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  
+  &::before {
+    background-image: url(../img/calendar.svg);
+  }
+}
+
+
+.top-facility-access {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+
+  @include g.mq() {
+    margin-top: 48px;
+  }
+
+  &::before {
+    background-image: url(../img/map.svg);
+  }
+}
+
+.top-facility-arrow {
+  position: absolute;
+  background-color: var(--color-bg-white);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+
+  @include g.mq() {
+    top: 72%;
+    transform: translateY(0);
+    bottom: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-135deg);
+    border-left: 3px solid var(--color-border-blue);
+    border-bottom: 3px solid var(--color-border-blue);
+  }
+}

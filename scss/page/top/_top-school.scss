@@ -1,0 +1,189 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-school
+------------------------------
+*/
+
+.top-school {
+  position: relative;
+  margin-top: 64px;
+  margin-bottom: 129px;
+  z-index: var(--z-index-menu);
+  
+  @include g.mq() {
+    margin-top: 3.7%;
+    padding-top: 120px;
+    margin-bottom: 0;
+  }
+}
+
+.top-school-inner {
+  position: relative;
+}
+
+.top-school-img {
+  width: 100%;
+
+  @include g.mq() {
+    width: 80.3%;
+  }
+}
+
+.top-school-card {
+  position: absolute;
+  background-color: var(--color-bg-white);
+  width: 90%;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 1px 1px 24px rgba(41, 41, 41, 0.4);
+  
+  @include g.mq() {
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 346px;
+    width: 100%;
+  }
+  
+  @include g.mq(lg) {
+    max-width: 486px;
+  }
+  
+  @include g.mq(xl) {
+    max-width: 540px;
+  }
+
+  // カードホバー時
+  &:hover {
+    background-color: var(--color-bg-blue);
+    transition: 0.3s;
+
+    .top-school-text {
+      color: var(--color-font-white);
+      transition: 0.3s;
+    } 
+    
+    .top-school-arrow {
+      background-color: var(--color-bg-white);
+      transition: 0.3s;
+
+      &::after {
+        border-left: 3px solid var(--color-border-blue);
+        border-bottom: 3px solid var(--color-border-blue);
+        transform: translateY(-50%) rotate(-45deg);
+        transition: 0.3s;
+        margin-left: -6px;
+        
+        @include g.mq(lg) {
+          border-left: 4px solid var(--color-border-blue);
+          border-bottom: 4px solid var(--color-border-blue);
+          margin-left: -8.5px;
+          
+        }
+      }
+    }
+  }
+}
+
+.top-school-text {
+  margin: 0 auto;
+  text-align: left;
+  width: 88.8%;
+  padding: 32px 0;
+  padding: 10% 0;
+
+  @include g.mq() {
+    padding: 42px 0;
+  }
+
+  @include g.mq(lg) {
+    padding: 64px 0;
+  }
+}
+
+.top-school-item {
+  font-size: 22px;
+  font-weight: bold;
+
+  @include g.mq() {
+    font-size: 28px;
+  }
+  
+  @include g.mq(lg) {
+    font-size: 34px;
+    
+  }
+  
+  &:not(:last-child) {
+    margin-bottom: 14px;
+
+    @include g.mq() {
+      margin-bottom: 18px;
+    }
+
+    @include g.mq(lg) {
+      margin-bottom: 28px;
+    }
+
+  }
+
+  span {
+    display: block;
+    
+    @include g.mq(lg) {
+      display: inline-block;
+    }
+    &:nth-child(2) {
+      font-size: 16px;
+      margin-top: 4px;
+
+      @include g.mq() {
+        font-size: 18px;
+        margin-top: 8px;
+      }
+
+    }
+  }
+}
+
+.top-school-arrow {
+  position: absolute;
+  background-color: var(--color-bg-blue);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  bottom: 7%;
+  right: 4.25%;
+
+  @include g.mq() {
+    bottom: 24px;
+    right: 24px;
+  }
+
+  @include g.mq(lg) {
+    width: 52px;
+    height: 52px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-135deg);
+    border-left: 3px solid var(--color-border-white);
+    border-bottom: 3px solid var(--color-border-white);
+    
+    @include g.mq(lg) {
+      width: 18px;
+      height: 18px;
+      border-left: 4px solid var(--color-border-white);
+      border-bottom: 4px solid var(--color-border-white);
+    }
+    
+  }
+
+}

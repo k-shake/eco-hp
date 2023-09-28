@@ -1,0 +1,57 @@
+@use "../../global" as g;
+
+/*!
+page > institution > institution-top
+------------------------------
+*/
+.institution-main {
+  position: relative;
+  z-index: var(--z-index-menu);
+}
+
+.institution-main-text {
+  margin-top: 18px;
+
+  @include g.mq() {
+    margin-top: 24px;
+  }
+}
+
+.institution-inner {
+  display: grid;
+  gap: 40px 30px;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 40px;
+
+  @include g.mq(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include g.mq() {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 30px;
+  }
+}
+
+.institution-img {
+  &:last-child:hover {
+    opacity: 0.7;
+  }
+}
+
+.institution-title {
+  text-align: center;
+  padding-top: 8px;
+
+  @include g.mq() {
+    padding-top: 10px;
+  }
+}
+
+.institution-text {
+  padding-top: 6px;
+
+  @include g.mq() {
+    padding-top: 8px;
+  }
+}

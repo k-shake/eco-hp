@@ -1,0 +1,57 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-topics
+------------------------------
+*/
+
+.top-topics {
+  padding-top: 64px;
+  margin-bottom: 64px;
+
+  @include g.mq() {
+    margin-bottom: 32px;
+  }
+}
+
+.top-topics-container {
+  @include g.mq(lg) {
+    display: flex;
+    gap: 0 170px;
+  }
+}
+
+.top-topics-inner {
+  @include g.mq(lg) {
+    position: relative;
+    flex-grow: 1;
+    padding-bottom: 42px;
+  }
+}
+
+.top-topics-post {
+  &:not(:first-child) {
+    padding-top: 18px;
+
+    @include g.mq() {
+      padding-top: 28px;
+    }
+  }
+  &:last-of-type {
+    @include g.mq(lg) {
+      padding-bottom: 58px;
+    }
+  }
+}
+
+.top-topics-button {
+  margin-top: 30px;
+  
+
+  @include g.mq(lg) {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+  }
+}

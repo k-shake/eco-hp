@@ -1,0 +1,143 @@
+@use "../../global" as g;
+
+/*!
+page > privacy > privacy
+------------------------------
+*/
+
+.privacy {
+  position: relative;
+  z-index: var(--z-index-menu);
+}
+
+.privacy-inner {
+  border: 1px solid var(--color-bg-skyblue);
+  border-radius: 10px;
+  padding: 16px 12px;
+  font-weight: 500;
+
+  @include g.mq() {
+    border: 2px solid var(--color-bg-skyblue);
+    padding: 24px 18px;
+  }
+
+  &-second {
+    margin-top: 14px;
+
+    @include g.mq() {
+      margin-top: 18px;
+    }
+  }
+}
+
+.privacy-text {
+  font-size: 18px;
+
+  @include g.mq() {
+    font-size: 20px;
+  }
+}
+
+.privacv-commpany {
+  text-align: right;
+  margin-top: 18px;
+  line-height: 1.2;
+
+  @include g.mq() {
+    margin-top: 24px;
+  }
+
+  p {
+    &:not(:first-child) {
+      margin-top: 8px;
+    }
+  }
+}
+
+.privacy-relative {
+  p {
+    margin-top: -24px;
+    margin-left: 30px;
+
+    @include g.mq() {
+      margin-top: -27px;
+      margin-left: 32px;
+    }
+
+    span {
+      display: block;
+    }
+  }
+}
+
+.privacy-confirmation {
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  margin-top: 24px;
+
+  @include g.mq() {
+    font-size: 18px;
+  }
+
+  &-sp {
+    @include g.mq() {
+      display: none;
+    }
+  }
+
+  &-pc {
+    display: none;
+    @include g.mq() {
+      display: block;
+    }
+  }
+
+  th,
+  td {
+    padding: 8px;
+    border: 1px solid var(--color-border-light-gray);
+
+    @include g.mq() {
+      padding: 14px;
+    }
+
+    span {
+      display: block;
+      margin-top: 8px;
+
+      @include g.mq() {
+        margin-top: 24px;
+      }
+    }
+  }
+
+  th {
+    // width: 2%;
+
+    @include g.mq() {
+      // width: 15%;
+    }
+  }
+  &--center {
+    width: 40%;
+    max-width: 180px;
+
+    @include g.mq() {
+      width: 20%;
+    }
+  }
+
+  &--blue {
+    background-color: var(--color-bg-blue);
+    color: var(--color-bg-white);
+    text-align: center;
+    height: 40px;
+
+    @include g.mq() {
+      height: 50px;
+    }
+  }
+}

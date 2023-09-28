@@ -1,0 +1,97 @@
+@use "../../global" as g;
+
+/*!
+page > access > access
+------------------------------
+*/
+.access-flex {
+  @include g.mq() {
+    display: flex;
+    gap: 42px;
+    margin-top: 42px;
+  }
+}
+
+.access-map {
+  margin-top: 24px;
+  
+  @include g.mq() {
+    margin-top: 0;
+    width: 60%;
+    max-width: 648px;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 50vh;
+    
+    @include g.mq() {
+      height: 60vh;
+    }
+  }
+}
+
+
+.access-inner {
+  width: 100%;
+
+  @include g.mq() {
+    max-width: 392px;
+    width: 36.3%;
+  }
+}
+
+.access-container {
+  font-size: 16px;
+  border-bottom: 1px solid var(--color-border-light-gray);
+  margin-top: 24px;
+  margin-bottom: 18px;
+  
+  @include g.mq() {
+    font-size: 18px;
+  }
+
+
+  p {
+    margin-bottom: 8px;
+
+    @include g.mq() {
+      margin-bottom: 14px;
+    }
+
+    span {
+      display: block;
+    }
+
+    &:first-child {
+      font-weight: 500;
+    }
+  }
+}
+
+.access-traffic-inner {
+  margin-bottom: 32px;
+}
+
+.access-traffic-container {
+  font-size: 16px;
+  border-bottom: 1px solid var(--color-border-light-gray);
+  margin-top: 18px;
+
+  @include g.mq() {
+    font-size: 18px;
+  }
+
+  p {
+    margin-bottom: 16px;
+
+    a {
+      color: var(--color-border-blue);
+      border-bottom: 1px solid var(--color-border-blue);
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

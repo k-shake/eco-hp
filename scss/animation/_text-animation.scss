@@ -1,0 +1,14 @@
+@use "../global" as g;
+
+/*!
+animation > text-animation
+------------------------------
+*/
+.has-animation-title-fade-in {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.is-animation-title-fade-in-active {
+    opacity: 1;
+}
